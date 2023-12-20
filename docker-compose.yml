@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  nishdemo:
+    container_name: nishdemo
+    image: ecduman/nishdemo
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db_customer
+      - db_document
+  db_customer:
+    container_name: db_customer
+    image: ecduman/postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=nish_customer
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=profen
+    volumes:
+      - /C/postdata:/postdata
+  
+  db_document:
+    container_name: db_document
+    image: ecduman/postgres:13
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=nish_document
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=profen
+    volumes:
+      - /C/postdata1:/postdata1
