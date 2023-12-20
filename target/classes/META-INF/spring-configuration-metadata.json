@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "nish.customers.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.nish.nishDemo.dbConfig.CustomerDBConfig",
+      "sourceMethod": "dataSource()"
+    },
+    {
+      "name": "nish.documents.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.nish.nishDemo.dbConfig.DocumentDBConfig",
+      "sourceMethod": "dataSource()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
